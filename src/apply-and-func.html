@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <script charset="utf-8">
+      var func1 = function a(event) {
+        console.log('func1');
+        return func2.apply(this,arguments);
+        //this = window
+        // this.func2(arguments);
+        //window.func2(arguments);
+        //func2(1,2,3,4,5);
+
+      }
+      func2 = function b(){
+        console.log('func2');
+      }
+      func1(1,2,3,4,5);
+    </script>
+  </body>
+</html>

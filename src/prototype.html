@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>原型继承</title>
+  </head>
+  <body>
+    <script charset="utf-8">
+        var a = 0;
+
+
+        function base(name){
+          this.name = name;
+        }
+
+        base.prototype.getName = function(){
+          return this.name;
+        }
+
+        function son(){
+
+        }
+
+        son.prototype = new base();
+
+
+
+        function child(){
+
+        }
+
+        child.prototype = new son();
+
+        var entity = new son("张三");
+
+        console.log(entity.getName());
+
+    </script>
+  </body>
+</html>

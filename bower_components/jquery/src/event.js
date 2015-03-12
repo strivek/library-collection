@@ -363,7 +363,7 @@ jQuery.event = {
 
 		return event.result;
 	},
-
+	//分发事件，执行事件监听函数
 	dispatch: function( event ) {
 
 		// Make a writable jQuery.Event from the native event object
@@ -519,6 +519,7 @@ jQuery.event = {
 	},
 
 	// Includes some event props shared by KeyEvent and MouseEvent
+	//事件对象的公共属性
 	props: "altKey bubbles cancelable ctrlKey currentTarget eventPhase metaKey relatedTarget shiftKey target timeStamp view which".split(" "),
 
 	fixHooks: {},
@@ -567,7 +568,7 @@ jQuery.event = {
 			return event;
 		}
 	},
-
+	//事件修正对象集
 	special: {
 		load: {
 			// Prevent triggered image.load events from bubbling to window.load
@@ -624,7 +625,7 @@ jQuery.event = {
 			}
 		}
 	},
-
+	//为不支持冒泡的事件,模拟冒泡
 	simulate: function( type, elem, event, bubble ) {
 		// Piggyback on a donor event to simulate a different one.
 		// Fake originalEvent to avoid donor's stopPropagation, but if the
